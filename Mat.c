@@ -44,7 +44,7 @@ void soustraireMatrices(int n, int m, int matrice1[n][m], int matrice2[n][m]) {
 void multiplierMatrices(int n, int m, int matrice1[n][m], int matrice2[m][n]) {
     int resultat[n][n];
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < m; j++) {
             int produit = 0;
             for (int k = 0; k < m; k++) {
                 produit += matrice1[i][k] * matrice2[k][j];
@@ -92,15 +92,77 @@ int main() {
                 afficherMatrice(n, m, matriceB);
                 break;
             case 3:
+                 printf("Veuillez entrer les éléments de la matriceA :\n");
+                 for (int i = 0; i < m; i++) {
+                  for (int j = 0; j < n; j++) {
+                  scanf("%d", &matriceA[i][j]);
+                 }  
+                 }
+                 
+                  printf("Veuillez entrer les éléments de la matriceB :\n");
+                     for (int i = 0; i < n; i++) {
+                     for (int j = 0; j < m; j++) {
+                    scanf("%d", &matriceB[i][j]);
+                     }
+                    }
+
                 additionnerMatrices(n, m, matriceA, matriceB);
                 break;
             case 4:
+               printf("Veuillez entrer les éléments de la matriceA :\n");
+                 for (int i = 0; i < m; i++) {
+                  for (int j = 0; j < n; j++) {
+                  scanf("%d", &matriceA[i][j]);
+                 }  
+                 }
+                 
+                  printf("Veuillez entrer les éléments de la matriceB :\n");
+                     for (int i = 0; i < n; i++) {
+                     for (int j = 0; j < m; j++) {
+                    scanf("%d", &matriceB[i][j]);
+                     }
+                    }
+
+                
                 soustraireMatrices(n, m, matriceA, matriceB);
+             
                 break;
             case 5:
-                multiplierMatrices(n, m, matriceA, matriceB);
+               
+                  printf("Veuillez entrer les éléments de la matriceA :\n");
+                 for (int i = 0; i < m; i++) {
+                  for (int j = 0; j < n; j++) {
+                  scanf("%d", &matriceA[i][j]);
+                 }  
+                 }
+                 
+                  
+                  printf("Veuillez entrer les éléments de la matriceB :\n");
+                     for (int i = 0; i < n; i++) {
+                     for (int j = 0; j < m; j++) {
+                    scanf("%d", &matriceB[i][j]);
+                     }
+                    }
+                    
+                     multiplierMatrices(n, m, matriceA, matriceB);
+                
                 break;
             case 6:
+                printf("Veuillez entrer les éléments de la matriceB :\n");
+                     for (int i = 0; i < n; i++) {
+                     for (int j = 0; j < m; j++) {
+                    scanf("%d", &matriceB[i][j]);
+                     }
+                    }
+                    
+                     printf("Veuillez entrer les éléments du vecteur :\n");
+                     for (int i = 0; i < n; i++) {
+                     for (int j = 0; j < n; j++) {
+                    scanf("%d", &vecteur);
+                     }
+                    }
+
+
                 produitMatriceVecteur(n, m, matriceB, vecteur);
                 break;
             default:
